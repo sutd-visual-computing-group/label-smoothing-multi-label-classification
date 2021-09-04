@@ -24,19 +24,27 @@ The models used here are **Residual Neural Networks** with varying depths of 18,
 Label smoothing is a regularization technique which turns hard class labels assignments into soft label assignments, it operates directly on the label themselves and may lead to a better generalization [1]. Labels in the scope of LS are usually classified into two types:
 * **Hard label assignments**, all entries in the matrix/vector are 0 except the one corresponding to the correct class or classes in the case of Multi-Hot encoding
 * **Soft label assignments**, the positive class have the largest probability and all other classes have a very small probability but not zero, there is assignment of probabilities to the incorrect classes.
-One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 There are two different Label Smoothing schemes utilized in this experiment:
 1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
 2. **Label Smoothing Scheme 2:** The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
 
+One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
+
 ## Results
 ### Label Smoothing Scheme 1
+* **Average Precision**
 | Model     | Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
 | --------- | --------- | --------- | --------- |
 | ResNet-18 | 0.916 | 0.853 | 0.865 |
 | ResNet-34 | 0.977 | 0.864 | 0.874 |
 | ResNet-50 | 0.992 | 0.871 | 0.883 |
+* **Losses**
+| Model	   | Loss (Training Set) | Loss (Validation Set) | Loss (Test Set)|
+| --------- | --------- | --------- | --------- |
+| ResNet-18	| 1.5020	| 2.3912	| 2.1982 |
+| ResNet-34	| 0.7101	| 2.6393	| 2.3846 |
+| ResNet-50	| 0.4265	| 2.7362	| 2.4859 |
 
 ### Label Smoothing Scheme 2
 | Model     | Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
@@ -44,6 +52,12 @@ There are two different Label Smoothing schemes utilized in this experiment:
 | ResNet-18	| 0.979 | 0.865 | 0.873 |
 | ResNet-34	| 0.982 | 0.847 | 0.859 |
 | ResNet-50	| 0.970 | 0.863 | 0.872 |
+* **Losses**
+| Model	   | Loss (Training Set) | Loss (Validation Set) | Loss (Test Set)|
+| --------- | --------- | --------- | --------- |
+| ResNet-18	| 0.7318	| 2.4773	| 2.2921 |
+| ResNet-34	| 0.6018	| 2.9692	| 2.6780 |
+| ResNet-50	| 0.8527	| 2.5462	| 2.3226 |
 
 ## Insights
 *
