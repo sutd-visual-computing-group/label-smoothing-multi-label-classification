@@ -1,0 +1,14 @@
+----------Experiment 1 - resnet34-----------
+transformations == Compose(
+    Resize(size=(300, 300), interpolation=bilinear)
+    RandomChoice(
+    ColorJitter(brightness=(0.8, 1.2), contrast=None, saturation=None, hue=None)
+    RandomGrayscale(p=0.25)
+)
+    RandomHorizontalFlip(p=0.25)
+    RandomRotation(degrees=[-25.0, 25.0], interpolation=nearest, expand=False, fill=0)
+    ToTensor()
+    Normalize(mean=[0.457342265910642, 0.4387686270106377, 0.4073427106250871], std=[0.26753769276329037, 0.2638145880487105, 0.2776826934044154])
+)
+Epoch 1 >>train_loss: 0.6018, train_avg_precision:0.982, val_loss: 2.9692, val_avg_precision:0.847
+saving best weights...
