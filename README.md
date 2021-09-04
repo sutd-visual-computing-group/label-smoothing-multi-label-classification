@@ -24,19 +24,16 @@ The models used here are Residual Neural Networks with varying depths of 18, 34,
 
 
 ## Results
-### Training History
-![loss-1](https://user-images.githubusercontent.com/21276946/55679999-d3f2d380-5946-11e9-92a4-45b3f0356ab9.png)
-![accuracy-1](https://user-images.githubusercontent.com/21276946/55680003-d7865a80-5946-11e9-80a4-14898c4c88e7.png)
 
-## How to reproduce the code?
-### Pytorch source code
-1. Install dependencies: pip install -r requirements.txt
+
+## Steps to utilize the code
+1. Install dependencies via: pip install -r requirements.txt
 2. Directory structure
-    * /docs: contain project and devkit documentation
+    * /docs: contain project and devkit documentation (credits to Keshigeyan Chandrasegaran)
     * /models: contains model weights, log-files and plots
     * /src: contains source code
-    * /data: data directory to download and extract pascal VOC dataset (You should create this directory manually)
-    * Run the main function in main.py with required arguments. The codebase is clearly documented with clear details on how to execute the functions. It also includes an example. You need to interface only with this function to reproduce the code.
+    * /data: data directory to download and extract pascal VOC dataset (Create this directory manually)
+    * Run the main function in main.py with required arguments. The codebase is clearly documented with clear details on how to execute the functions. You need to interface only with this function to reproduce the code.
 
 ## Acknowledgements
 This work was done by Leon Tjandra and Keshigeyan Chandrasegaran at Temasek Laboratories, Singapore University of Technology and Design.
