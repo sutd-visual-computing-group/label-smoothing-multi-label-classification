@@ -18,9 +18,12 @@ The task is multi-label classification for 20 object classes, which is analogous
 Average precision is used as the metric to measure performance which is the average of the maximum precisions at different recall values. 
 
 ## Model
-The models used here are Residual Neural Networks with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 16, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet-fc.
+The models used here are Residual Neural Networks with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 16, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers.
 
-## Challenges
+## Label Smoothing
+Label smoothing is a regularization technique which turns hard class labels assignments into soft label assignments, it operates directly on the label themselves and may lead to a better generalization [1]. Labels in the scope of LS are usually classified into two types:
+* Hard label assignment: all entries in the matrix/vector are 0 except the one corresponding to the correct class or classes in the case of Multi-Hot encoding
+* Soft label assignments, where the positive class have the largest probability and all other classes have a very small probability but not zero. One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 
 ## Results
@@ -37,3 +40,6 @@ The models used here are Residual Neural Networks with varying depths of 18, 34,
 
 ## Acknowledgements
 This work was done by Leon Tjandra and Keshigeyan Chandrasegaran at Temasek Laboratories, Singapore University of Technology and Design.
+
+## References
+[1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
