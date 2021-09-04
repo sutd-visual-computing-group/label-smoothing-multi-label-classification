@@ -1,6 +1,6 @@
 # Introduction
-This GitHub repository contains Python code on Label Smoothing, it is built based on another repository created by my mentor: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating it into a label smoothed system.
-Implement LS and test out the code, document it like the repository example. Perform quick analysis, precision and recall curve, obtain the .csv files. The first and foremost step is to fork the code from GitHub or download it and analyze the python files. In the end I am tasked to transfer and upload to the GitHub group repository. 
+This GitHub repository contains Python code on Label Smoothing, it is built based on another repository created by my mentor: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system. The main objectives involves:
+* Implement LS and test out the code, document it like the repository example. Perform quick analysis, precision and recall curve, obtain the .csv files. The first and foremost step is to fork the code from GitHub or download it and analyze the python files. In the end I am tasked to transfer and upload to the GitHub group repository. 
 
 ## Problem Statement
 The goal of this project is to recognize objects from a number of visual object classes in realistic scenes. There are 20 object classes:
