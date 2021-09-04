@@ -1,7 +1,7 @@
 # Introduction
 This GitHub repository contains Python code on **Label Smoothing**, it is built based on a repository created by my mentor during my Internship: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
 * Implement two different **Label Smoothing Schemes** (with and without added confidence towards the probabilities of incorrect classes) and analyze the Average Precision results for different ResNet models (ResNet-18,34,50) on multi-label classification for the Pascal VOC dataset
-* Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing
+* Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing (see prcurve.py)
 
 ## Dataset
 The dataset used in the experiment is **Pascal VOC 2012** dataset which is built-in on the latest version of pytorch, separated into the Training, Validation, and Test sets. The Pascal VOC 2012 dataset contains 20 object classes divided into 4 main groups:
@@ -22,7 +22,7 @@ The models used here are **Residual Neural Networks** with varying depths of 18,
 
 ## Label Smoothing
 Label smoothing is a regularization technique which turns hard class labels assignments into soft label assignments, it operates directly on the label themselves and may lead to a better generalization [1]. Labels in the scope of LS are usually classified into two types:
-* **Hard label assignments**, all entries in the matrix/vector are 0 except the one corresponding to the correct class or classes in the case of Multi-Hot encoding
+* **Hard label assignments**, all entries in the matrix/vector are 0 except the one corresponding to the correct class or classes in the case of Multi-Hot encoding which is assigned to 1
 * **Soft label assignments**, the positive class have the largest probability and all other classes have a very small probability but not zero, there is assignment of probabilities to the incorrect classes.
 
 There are two different Label Smoothing schemes utilized in this experiment:
