@@ -4,7 +4,7 @@ This GitHub repository contains Python code on Label Smoothing, it is built base
 * Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing
 
 ## Dataset
-The dataset used in the experiment is Pascal VOC 2012 dataset which is built-in on the latest version of pytorch, separated into the Training, Validation, and Test sets. The Pascal VOC 2012 dataset contains 20 object classes divided into 4 main groups:
+The dataset used in the experiment is **Pascal VOC 2012** dataset which is built-in on the latest version of pytorch, separated into the Training, Validation, and Test sets. The Pascal VOC 2012 dataset contains 20 object classes divided into 4 main groups:
 1. Person
 2. Bird, cat, cow, dog, horse, sheep
 3. Aeroplane, bicycle, boat, bus, car, motorbike, train
@@ -27,8 +27,8 @@ Label smoothing is a regularization technique which turns hard class labels assi
 One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 There are two different Label Smoothing schemes utilized in this experiment:
-**1. Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
-**2. Label Smoothing Scheme 2:** The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
+1. Label Smoothing Scheme 1: The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
+2. Label Smoothing Scheme 2: The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
 
 ## Results
 ### Label Smoothing Scheme 1
