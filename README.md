@@ -1,26 +1,14 @@
 # Introduction
-This GitHub repository contains Python code on Label Smoothing, it is built based on another repository created by my mentor: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system. The main objectives involves:
-* Implement LS and test out the code, document it like the repository example. Perform quick analysis, precision and recall curve, obtain the .csv files. The first and foremost step is to fork the code from GitHub or download it and analyze the python files. In the end I am tasked to transfer and upload to the GitHub group repository. 
+This GitHub repository contains Python code on Label Smoothing, it is built based on a repository created by my mentor during my Internship: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
+* Implement two different Label Smoothing Schemes (with and without added confidence towards the probabilities of incorrect classes) and analyze the Average Precision results for different ResNet models (ResNet-18,34,50)
+* Perform quick analysis and construct a Precision and Recall curve from given .csv files for different degrees of Label Smoothing
 
-## Problem Statement
-The goal of this project is to recognize objects from a number of visual object classes in realistic scenes. There are 20 object classes:
+## Dataset
+The dataset used in the experiment is Pascal VOC 2012 dataset which is built-in on the latest version of pytorch, separated into the Training, Validation, and Test sets. The Pascal VOC 2012 dataset contains 20 object classes divided into 4 main groups:
 1. Person
 2. Bird, cat, cow, dog, horse, sheep
 3. Aeroplane, bicycle, boat, bus, car, motorbike, train
 4. Bottle, chair, dining table, potted plant, sofa, tv/ monitor
-
-Specifically for the classification task, the goal is, for each of the classes predict the presence/ absence of at least one object of that class in a test image.
-
-## Data
-We will use Pascal VOC 2012 dataset for this project and the latest version of pytorch has Pascal VOC dataset class built-in. For the purpose of this project, we will only use training set and validation set of Pascal VOC. The ground truth annotation for the dataset contains the following information,
-* Class: the object class. I.e. car or person
-* Bounding box: an axis-aligned rectangle specifying the extent of the object visible in the image
-* View: ‘frontal’ , ‘rear’, ‘left’ or right
-* Difficult: an object marked as difficult indicates that the object is considered difficult to recognize without substantial use of context.
-* Truncated: an object marked as ‘truncated’ indicates that the bounding box specified for the object does not correspond to the full extent of the object.
-* Occluded: an object marked as ‘occluded’ indicates that a significant portion of the  subject image is within the bounding box occluded by another object.
-
-For our task, we regarded all ‘difficult’ marked objects as negative examples.
 
 ## Loss function
 
