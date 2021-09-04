@@ -1,5 +1,5 @@
 # Introduction
-This GitHub repository contains Python code on Label Smoothing, it is built based on a repository created by my mentor during my Internship: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
+This GitHub repository contains Python code on **Label Smoothing**, it is built based on a repository created by my mentor during my Internship: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
 * Implement two different **Label Smoothing Schemes** (with and without added confidence towards the probabilities of incorrect classes) and analyze the Average Precision results for different ResNet models (ResNet-18,34,50) on multi-label classification for the Pascal VOC dataset
 * Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing
 
@@ -18,7 +18,7 @@ The task is multi-label classification for 20 object classes, which is analogous
 **Average precision** is used as the metric to measure performance which is the average of the maximum precisions at different recall values. 
 
 ## Model
-The models used here are Residual Neural Networks with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 16, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers.
+The models used here are **Residual Neural Networks** with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 16, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers.
 
 ## Label Smoothing
 Label smoothing is a regularization technique which turns hard class labels assignments into soft label assignments, it operates directly on the label themselves and may lead to a better generalization [1]. Labels in the scope of LS are usually classified into two types:
@@ -27,8 +27,8 @@ Label smoothing is a regularization technique which turns hard class labels assi
 One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 There are two different Label Smoothing schemes utilized in this experiment:
-1. Label Smoothing Scheme 1: The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
-2. Label Smoothing Scheme 2: The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
+1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
+2. **Label Smoothing Scheme 2:** The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
 
 ## Results
 ### Label Smoothing Scheme 1
