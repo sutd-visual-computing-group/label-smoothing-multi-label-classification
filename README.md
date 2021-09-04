@@ -39,6 +39,7 @@ One reason of using LS is to prevent the model from becoming too confident in it
 | ResNet-18 | 0.916 | 0.853 | 0.865 |
 | ResNet-34 | 0.977 | 0.864 | 0.874 |
 | ResNet-50 | 0.992 | 0.871 | 0.883 |
+
 **Losses**
 | Model	   | Loss (Training Set) | Loss (Validation Set) | Loss (Test Set)|
 | --------- | --------- | --------- | --------- |
@@ -47,11 +48,13 @@ One reason of using LS is to prevent the model from becoming too confident in it
 | ResNet-50	| 0.4265	| 2.7362	| 2.4859 |
 
 ### Label Smoothing Scheme 2
+**Average Precision**
 | Model     | Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
 | --------- | --------- | --------- | --------- |
 | ResNet-18	| 0.979 | 0.865 | 0.873 |
 | ResNet-34	| 0.982 | 0.847 | 0.859 |
 | ResNet-50	| 0.970 | 0.863 | 0.872 |
+
 **Losses**
 | Model	   | Loss (Training Set) | Loss (Validation Set) | Loss (Test Set)|
 | --------- | --------- | --------- | --------- |
