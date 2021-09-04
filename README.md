@@ -23,7 +23,7 @@ The models used here are **Residual Neural Networks** with varying depths of 18,
 ## Label Smoothing
 Label smoothing is a regularization technique which turns hard class labels assignments into soft label assignments, it operates directly on the label themselves and may lead to a better generalization [1]. Labels in the scope of LS are usually classified into two types:
 * **Hard label assignments**, all entries in the matrix/vector are 0 except the one corresponding to the correct class or classes in the case of Multi-Hot encoding which is assigned to 1
-* **Soft label assignments**, the positive class have the largest probability and all other classes have a very small probability but not zero, there is assignment of probabilities to the incorrect classes.
+* **Soft label assignments**, the correct class or classes have the largest probability and all other classes have a very small probability but not zero, there is assignment of probabilities to the incorrect classes.
 
 There are two different Label Smoothing schemes utilized in this experiment:
 1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
