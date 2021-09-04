@@ -27,10 +27,11 @@ Label smoothing is a regularization technique which turns hard class labels assi
 One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 ## Results
-|Model|Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
-|ResNet-18|0.916|0.853|0.865|
-|ResNet-34|0.977|0.864|0.874|
-|ResNet-50|0.992|0.871|0.883|
+| Model     | Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
+| --------- | --------- | --------- | --------- |
+| ResNet-18 | 0.916 | 0.853 | 0.865 |
+| ResNet-34 | 0.977 | 0.864 | 0.874 |
+| ResNet-50 | 0.992 | 0.871 | 0.883 |
 
 ## Insights
 *
