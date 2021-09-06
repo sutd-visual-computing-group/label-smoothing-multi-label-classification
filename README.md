@@ -26,7 +26,7 @@ Label smoothing is a regularization technique which turns hard class labels assi
 * **Soft label assignments**, the correct class or classes have the largest probability and all other classes have a very small probability but not zero, there is assignment of probabilities to the incorrect classes.
 
 There are two different Label Smoothing schemes utilized in this experiment:
-1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes. We can denote the Probability of the correct classes as P(C), the Probabilities of the incorrect classes as P(I), degree of label smoothing as α, and the total number of object classes as n, then the following equation applies:
+1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes. We can denote the Probability of the correct classes as **P(C)**, the Probabilities of the incorrect classes as **P(I)**, degree of label smoothing as **α**, and the total number of object classes as **n**, then the following equation applies:
 
 <p align="center">
 P(C) = 1 - α + (α/n)
@@ -36,6 +36,13 @@ P(I) = 0 + (α/n)
 </p>
 
 2. **Label Smoothing Scheme 2:** The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
+
+<p align="center">
+P(C) = 1 - α
+</p>
+<p align="center">
+P(I) = 0
+</p>
 
 One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
