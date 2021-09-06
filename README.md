@@ -4,7 +4,7 @@ This GitHub repository contains Python code on **Label Smoothing**, it is built 
 * Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing (see prcurve.py)
 
 ## Dataset
-The dataset used in the experiment is **Pascal VOC 2012** dataset which is built-in on the latest version of pytorch, separated into the Training, Validation, and Test sets. The Pascal VOC 2012 dataset contains 20 object classes divided into 4 main groups:
+The dataset used in the experiment is **Pascal VOC 2012** dataset which is built-in on the latest version of pytorch, separated into the Training and Validation sets. The Pascal VOC 2012 dataset contains 20 object classes divided into 4 main groups:
 1. Person
 2. Bird, cat, cow, dog, horse, sheep
 3. Aeroplane, bicycle, boat, bus, car, motorbike, train
@@ -26,26 +26,32 @@ Label smoothing is a regularization technique which turns hard class labels assi
 * **Soft label assignments**, the correct class or classes have the largest probability and all other classes have a very small probability but not zero, there is assignment of probabilities to the incorrect classes.
 
 There are two different Label Smoothing schemes utilized in this experiment:
-1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes
+1. **Label Smoothing Scheme 1:** The probabilities of correct classes are decreased by a certain degree of LS, the probabilities of other classes are increased by a small value of the degree divided by the total number of object classes. This degree is a hyperparameter.
 2. **Label Smoothing Scheme 2:** The probabilities of correct classes are decreased by the LS degree, the probabilities of incorrect classes stays at zero
 
 One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 ## Results
-### Label Smoothing Scheme 1
-**Average Precision**
-| Model     | Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
+### Average Precision (Training Set)
+| Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
 | ResNet-18 | 0.916 | 0.853 | 0.865 |
 | ResNet-34 | 0.977 | 0.864 | 0.874 |
 | ResNet-50 | 0.992 | 0.871 | 0.883 |
 
-**Losses**
-| Model	   | Loss (Training Set) | Loss (Validation Set) | Loss (Test Set)|
+### Average Precision (Validation Set)
+| Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18	| 1.5020	| 2.3912	| 2.1982 |
-| ResNet-34	| 0.7101	| 2.6393	| 2.3846 |
-| ResNet-50	| 0.4265	| 2.7362	| 2.4859 |
+| ResNet-18 | 0.916 | 0.853 | 0.865 |
+| ResNet-34 | 0.977 | 0.864 | 0.874 |
+| ResNet-50 | 0.992 | 0.871 | 0.883 |
+
+### Average Precision (Test Set)
+| Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
+| --------- | --------- | --------- | --------- |
+| ResNet-18 | 0.916 | 0.853 | 0.865 |
+| ResNet-34 | 0.977 | 0.864 | 0.874 |
+| ResNet-50 | 0.992 | 0.871 | 0.883 |
 
 The results shows that with the same degree of label smoothing, a ResNet-18 model with label smoothing degree 0.1 obtains an average test precision of 0.865 and test loss of 2.1982, where the average precision is lower than that of the ResNet-34 and ResNet-50, on the validation dataset the average precision is also lower than the deeper models indicating that the model may have less complexity and thus unable to capture the features of the image as well as the deeper models but it is less likely to overfit.
 
