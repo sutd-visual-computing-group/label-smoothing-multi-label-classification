@@ -50,23 +50,23 @@ One reason of using LS is to prevent the model from becoming too confident in it
 ### Average Precision (Training Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0.916 | 0.853 | 0.865 |
-| ResNet-34 | 0.977 | 0.864 | 0.874 |
-| ResNet-50 | 0.992 | 0.871 | 0.883 |
+| ResNet-18 | 0 | 0.916 | 0.979 |
+| ResNet-34 | 0.962 | 0.977 | 0.982 |
+| ResNet-50 | 0 | 0.992 | 0.970 |
 
 ### Average Precision (Validation Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0.916 | 0.853 | 0.865 |
-| ResNet-34 | 0.977 | 0.864 | 0.874 |
-| ResNet-50 | 0.992 | 0.871 | 0.883 |
+| ResNet-18 | 0 | 0.853 | 0.865 |
+| ResNet-34 | 0.871 | 0.864 | 0.847 |
+| ResNet-50 | 0 | 0.871 | 0.863 |
 
 ### Average Precision (Test Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0.916 | 0.853 | 0.865 |
-| ResNet-34 | 0.977 | 0.864 | 0.874 |
-| ResNet-50 | 0.992 | 0.871 | 0.883 |
+| ResNet-18 | 0 | 0.865 | 0.873 |
+| ResNet-34 | 0.882 | 0.873 | 0.859 |
+| ResNet-50 | 0 | 0.883 | 0.872 |
 
 ## Insights
 * The degree of Label Smoothing chosen to be 0.1 since it is the most widely used degree which maintains a decently high confidence on the correct classes and adds a bit to the incorrect classes
