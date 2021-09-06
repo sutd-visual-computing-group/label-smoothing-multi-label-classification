@@ -50,21 +50,21 @@ One reason of using LS is to prevent the model from becoming too confident in it
 ### Average Precision (Training Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0 | 0.916 | 0.979 |
+| ResNet-18 | 0.997 | 0.916 | 0.979 |
 | ResNet-34 | 0.962 | 0.977 | 0.982 |
 | ResNet-50 | 0 | 0.992 | 0.970 |
 
 ### Average Precision (Validation Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0 | 0.853 | 0.865 |
+| ResNet-18 | 0.872 | 0.853 | 0.865 |
 | ResNet-34 | 0.871 | 0.864 | 0.847 |
 | ResNet-50 | 0 | 0.871 | 0.863 |
 
 ### Average Precision (Test Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0 | 0.865 | 0.873 |
+| ResNet-18 | 0.882 | 0.865 | 0.873 |
 | ResNet-34 | 0.882 | 0.873 | 0.859 |
 | ResNet-50 | 0 | 0.883 | 0.872 |
 
