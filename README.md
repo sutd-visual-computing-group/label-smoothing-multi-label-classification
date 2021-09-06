@@ -30,7 +30,8 @@ There are two different Label Smoothing schemes utilized in this experiment:
 
 <p align="center">
 P(C) = 1 - α + (α/n)
-
+</p>
+<p align="center">
 P(I) = 0 + (α/n)
 </p>
 
