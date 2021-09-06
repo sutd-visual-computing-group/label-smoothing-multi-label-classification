@@ -90,7 +90,7 @@ Using label smoothing scheme 2, the results for ResNet-34 performs worse than LS
     * Run the main function in main.py with required arguments. The codebase is clearly documented with clear details on how to execute the functions. You need to interface only with this function to reproduce the code.
 
 ## Acknowledgements
-This work was done by Leon Tjandra at Temasek Laboratories, Singapore University of Technology and Design.
+This work was done by Leon Tjandra during an internship at Temasek Laboratories, Singapore University of Technology and Design.
 
 ## References
 [1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
