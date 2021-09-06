@@ -1,5 +1,5 @@
 # Introduction
-This GitHub repository contains Python code on **Label Smoothing**, it is built based on a repository created by my mentor during my Internship: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
+This GitHub repository contains Python code on **Label Smoothing**, it is built based on a repository: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
 * Implement two different **Label Smoothing Schemes** (with and without added confidence towards the probabilities of incorrect classes) and analyze the Average Precision results for different ResNet models (ResNet-18,34,50) on multi-label classification for the Pascal VOC dataset
 * Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing (see prcurve.py)
 
@@ -90,7 +90,7 @@ Using label smoothing scheme 2, the results for ResNet-34 performs worse than LS
     * Run the main function in main.py with required arguments. The codebase is clearly documented with clear details on how to execute the functions. You need to interface only with this function to reproduce the code.
 
 ## Acknowledgements
-This work was done by Leon Tjandra and Keshigeyan Chandrasegaran at Temasek Laboratories, Singapore University of Technology and Design.
+This work was done by Leon Tjandra at Temasek Laboratories, Singapore University of Technology and Design.
 
 ## References
 [1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
