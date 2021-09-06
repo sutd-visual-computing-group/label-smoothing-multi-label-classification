@@ -68,29 +68,6 @@ One reason of using LS is to prevent the model from becoming too confident in it
 | ResNet-34 | 0.977 | 0.864 | 0.874 |
 | ResNet-50 | 0.992 | 0.871 | 0.883 |
 
-The results shows that with the same degree of label smoothing, a ResNet-18 model with label smoothing degree 0.1 obtains an average test precision of 0.865 and test loss of 2.1982, where the average precision is lower than that of the ResNet-34 and ResNet-50, on the validation dataset the average precision is also lower than the deeper models indicating that the model may have less complexity and thus unable to capture the features of the image as well as the deeper models but it is less likely to overfit.
-
-The results for ResNet-50 obtains an average test precision of 0.883 which is higher than ResNet-18 as well as ResNet-34 for Label Smoothing Scheme 1 with degree 0.1, and the test loss is 2.4859 which is higher than ResNet-18 and 34. Deeper models may be able to capture more features with increased complexity however do take note that models that overfit may perform poorly. For Deep Neural Networks, as depth increases the average precision for training also increases from ResNet-18 to ResNet-50 and the same goes for the average precision of the validation set. 
-
-### Label Smoothing Scheme 2
-**Average Precision**
-| Model     | Average Precision (Training Set)|Average Precision (Validation Set)|Average Precision (Test Set)|
-| --------- | --------- | --------- | --------- |
-| ResNet-18	| 0.979 | 0.865 | 0.873 |
-| ResNet-34	| 0.982 | 0.847 | 0.859 |
-| ResNet-50	| 0.970 | 0.863 | 0.872 |
-
-**Losses**
-| Model	   | Loss (Training Set) | Loss (Validation Set) | Loss (Test Set)|
-| --------- | --------- | --------- | --------- |
-| ResNet-18	| 0.7318	| 2.4773	| 2.2921 |
-| ResNet-34	| 0.6018	| 2.9692	| 2.6780 |
-| ResNet-50	| 0.8527	| 2.5462	| 2.3226 |
-
-By modifying and changing the label smoothing function to only reduce the probabilities of the correct classes while keeping incorrect classes at 0, the average test precision obtained for ResNet-18 is 0.873 which is higher compared to the same model with label smoothing scheme 1 (the average test precision is 0.865), the validation and training average precisions are 0.979 and 0.865 respectively which is also higher than scheme 1, thus for the ResNet-18 model, keeping the incorrect classes at 0 and softening the correct classes by a small degree may help increase the model performance since the model itself is not too deep compared to the two other variants and is less prone to overfitting.
-
-Using label smoothing scheme 2, the results for ResNet-34 performs worse than LS scheme 1 where the average precision for test set is 0.859 as opposed to 0.874, the validation average precision is also lower with 0.847 as opposed to 0.864, only the training average precision is higher being 0.982. A similar trend can be seen on the results for ResNet-50 which also performs worse than LS scheme 1, the average precision for test set is 0.872 as opposed to 0.883, the validation average precision is also lower with 0.863 as opposed to 0.871, furthermore the training average precision is also lower with a value of 0.970 instead of 0.992. Here we are totally ignoring the probabilities of the incorrect classes, thus models are more prone to overfitting and too confident in the correct classes.
-
 ## Insights
 * The degree of Label Smoothing chosen to be 0.1 since it is the most widely used degree which maintains a decently high confidence on the correct classes and adds a bit to the incorrect classes
 * The performance of the models after label smoothing is reliant on the training dataset which is Pascal VOC 2012 that is widely used in detection tasks
