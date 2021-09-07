@@ -10,6 +10,8 @@ The dataset used in the experiment is **Pascal VOC 2012** dataset which is built
 3. Aeroplane, bicycle, boat, bus, car, motorbike, train
 4. Bottle, chair, dining table, potted plant, sofa, tv/ monitor
 
+This experiment also involves a Test Dataset which is identical to the Validation set, however here we utilize a different transformation towards the dataset which uses a FiveCrop from the torchvision library [2] which crops the given image into four corners and the central crop with a parameter size of 300 denoting the desired output size of the crop.
+
 ## Loss function
 
 The task is multi-label classification for 20 object classes, which is analogous to creating 20 object detectors, 1 for every class. The loss function used is the binary cross entropy (with logits loss), where in PyTorch, the loss function can be applied using torch.nn.BCEWithLogitsLoss( ). Do note that this function provides numerical stability over the sequence of sigmoid followed by binary cross entropy. The loss function is clearly documented at ***https://pytorch.org/docs/stable/_modules/torch/nn/modules/loss.html#BCEWithLogitsLoss***
@@ -92,3 +94,4 @@ This work was done by Leon Tjandra during an internship at Temasek Laboratories,
 
 ## References
 [1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
+[2] Torch Contributors. (2017). "Torchvision.transforms". https://pytorch.org/vision/stable/transforms.html
