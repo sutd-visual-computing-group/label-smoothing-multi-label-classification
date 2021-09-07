@@ -94,4 +94,5 @@ This work was done by Leon Tjandra during an internship at Temasek Laboratories,
 
 ## References
 [1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
+
 [2] Torch Contributors. (2017). "Torchvision.transforms". https://pytorch.org/vision/stable/transforms.html
