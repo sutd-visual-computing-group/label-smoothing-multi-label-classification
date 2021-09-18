@@ -54,7 +54,7 @@ def train_model(model, device, optimizer, scheduler, train_loader, valid_loader,
                 
                 for data, target in tqdm(train_loader):
                     #print(data)
-                    target2 = target
+                    #target2 = target
                     target = target.float()
                     data, target = data.to(device), target.to(device)
                     
@@ -68,11 +68,8 @@ def train_model(model, device, optimizer, scheduler, train_loader, valid_loader,
                     # Get metrics here
                     running_loss += loss # sum up batch loss
                     running_ap += get_ap_score(torch.Tensor.cpu(target).detach().numpy(), torch.Tensor.cpu(m(output)).detach().numpy())
-
-                    #EDITTED PART WITH LABEL SMOOTH (HERE)
-                    target2 = smooth_labels(target2)
-                    target = target2
-               
+                    #target2 = smooth_labels(target2)
+                    #target = target2
                     # Backpropagate the system the determine the gradients
                     loss.backward()
                     
@@ -80,7 +77,8 @@ def train_model(model, device, optimizer, scheduler, train_loader, valid_loader,
                     optimizer.step()
             
                     # clear variables
-                    del data, target, output, target2
+                    del data, target, output
+                    #del target 2
                     gc.collect()
                     torch.cuda.empty_cache()
                     
@@ -202,5 +200,3 @@ def test(model, device, test_loader, returnAllScores=False):
         return avg_test_loss, running_ap
     
     return avg_test_loss, running_ap, all_scores, ground_scores
-
-
