@@ -91,11 +91,11 @@ From the Average Precisions recorded during the experiments, we can see that the
 
 ## Insights
 * The degree of Label Smoothing chosen to be 0.1 since it is the most widely used degree which maintains a decently high confidence on the correct classes and adds a bit to the incorrect classes
-* The performance of the models after label smoothing is reliant on the training dataset which is Pascal VOC 2012 that is widely used in detection tasks
+* The performance of the models after label smoothing is affected by the training dataset which is Pascal VOC 2012 that is widely used in detection tasks
 * Residual neural networks are chosen as they are able to utilize deep and large number of layers but remain less complex than most other models, signifying compactness
 
 ## Potential Problems
-* The model is only trained on the Pascal VOC 2012 Dataset and while it is a vast dataset, there are object classes not included within the dataset which will affect the classification performance on these foreign object classes
+* The model is trained only on the Pascal VOC 2012 Dataset and while it is a vast dataset, there are object classes not included within the dataset which will affect the classification performance on these foreign object classes
 * A single degree of label smoothing chosen to be 0.1 is used on all of the experiments which do not truly shows the changes if this particular degree is modified
 
 ## Steps to utilize the code
