@@ -4,11 +4,11 @@ Created on Wed Mar 13 10:50:25 2019
 
 @author: Keshik
 """
-
 import torch
 import numpy as np
 from torchvision import transforms
 import torchvision.models as  models
+from torchvision.models import mobilenet_v2
 from torch.utils.data import DataLoader
 from dataset import PascalVOC_Dataset
 import torch.optim as optim
@@ -17,6 +17,8 @@ from utils import encode_labels, plot_history
 import os
 import torch.utils.model_zoo as model_zoo
 import utils
+
+#modele = mobilenet_v2(pretrained=True)
 
 def main(data_dir, model_name, num, lr, epochs, batch_size = 16, download_data = False, save_results=False):
     """
@@ -50,19 +52,22 @@ def main(data_dir, model_name, num, lr, epochs, batch_size = 16, download_data =
     'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',
     'resnet34': 'https://download.pytorch.org/models/resnet34-333f7ec4.pth',
     'resnet50': 'https://download.pytorch.org/models/resnet50-19c8e357.pth',
+    'mobilenetv2': 'https://download.pytorch.org/models/mobilenet_v2-b0353104.pth'
     }
     
     model_collections_dict = {
             "resnet18": models.resnet18(),
             "resnet34": models.resnet34(),
-            "resnet50": models.resnet50()
+            "resnet50": models.resnet50(),
+            "mobilenetv2": models.mobilenet_v2()
             }
     
     # Initialize cuda parameters
     use_cuda = torch.cuda.is_available()
     np.random.seed(2019)
     torch.manual_seed(2019)
-    device = torch.device("cuda" if use_cuda else "cpu")
+    device = torch.device("cuda")
+    # if use_cuda else "cpu"
     
     print("Available device = ", device)
     model = model_collections_dict[model_name]
@@ -70,6 +75,8 @@ def main(data_dir, model_name, num, lr, epochs, batch_size = 16, download_data =
     model.load_state_dict(model_zoo.load_url(model_urls[model_name]))
     num_ftrs = model.fc.in_features
     model.fc = torch.nn.Linear(num_ftrs, 20)
+    #model.classifier[1] = torch.nn.Linear(1280, 20)
+    #print(model)
     model.to(device)
            
     optimizer = optim.SGD([   
@@ -131,8 +138,8 @@ def main(data_dir, model_name, num, lr, epochs, batch_size = 16, download_data =
     weights_file_path =  os.path.join(model_dir, "model-{}.pth".format(num))
     if os.path.isfile(weights_file_path):
         print("Loading best weights")
-        model.load_state_dict(torch.load(weights_file_path, map_location=torch.device('cpu')))
-    
+        model.load_state_dict(torch.load(weights_file_path))
+    #map_location=torch.device('cpu')
     
     log_file = open(os.path.join(model_dir, "log-{}.txt".format(num)), "w+")
     log_file.write("----------Experiment {} - {}-----------\n".format(num, model_name))
@@ -149,7 +156,8 @@ def main(data_dir, model_name, num, lr, epochs, batch_size = 16, download_data =
     print("Evaluating model on test set")
     print("Loading best weights")
    
-    model.load_state_dict(torch.load(weights_file_path, map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(weights_file_path))
+    #map_location=torch.device('cpu'))
     transformations_test = transforms.Compose([transforms.Resize(330), 
                                           transforms.FiveCrop(300), 
                                           transforms.Lambda(lambda crops: torch.stack([transforms.ToTensor()(crop) for crop in crops])),
@@ -187,4 +195,4 @@ def main(data_dir, model_name, num, lr, epochs, batch_size = 16, download_data =
 
 # Execute main function here
 if __name__ == '__main__':
-    main('../data/', "resnet50", num=1, lr = [1.5e-4, 5e-2], epochs = 1, batch_size=16, download_data=False, save_results=True)
+    main('../data/', "resnet50", num=1, lr = [1.5e-4, 5e-2], epochs = 15, batch_size=4, download_data=False, save_results=True)
