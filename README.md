@@ -56,20 +56,20 @@ The main results presented here will be a comparison between the ResNet-18 model
 ### Average Precision (Training Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0.997 | 0.916 | 0.979 |
-| MobileNetV2 | 0.997 | 0.916 | 0.979 |
+| ResNet-18 | 0.996 | 0.997 | 0.996 |
+| MobileNetV2 | 0.971 | 0.986 | 0.990 |
 
 ### Average Precision (Validation Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0.872 | 0.853 | 0.865 |
-| MobileNetV2 | 0.997 | 0.916 | 0.979 |
+| ResNet-18 | 0.872 | 0.877 | 0.876 |
+| MobileNetV2 | 0.903 | 0.890 | 0.879 |
 
 ### Average Precision (Test Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
-| ResNet-18 | 0.882 | 0.865 | 0.873 |
-| MobileNetV2 | 0.997 | 0.916 | 0.979 |
+| ResNet-18 | 0.896 | 0.895 | 0.896 |
+| MobileNetV2 | 0.918 | 0.909 | 0.902 |
 
 ### Loss (ResNet-18)
 
