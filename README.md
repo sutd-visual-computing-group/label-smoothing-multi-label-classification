@@ -1,6 +1,6 @@
 # Introduction
 This GitHub repository contains Python code on **Label Smoothing**, it is built based on a repository: https://github.com/keshik6/pascal-voc-classification. The idea here is to apply some modifications on the encode_labels function under utils.py to take into account multi-hot vector encoding and integrating with a label smoothed system as well as try out some experiment on constructing precision-recall curves. The main objectives involves:
-* Implement two different **Label Smoothing Schemes** (with and without added confidence towards the probabilities of incorrect classes) and analyze the Average Precision results for different ResNet models (ResNet-18, 34, 50) as well as the MobileNet-V2 model on multi-label classification for the Pascal VOC dataset
+* Implement two different **Label Smoothing Schemes** (with and without added confidence towards the probabilities of incorrect classes) and analyze the Average Precision results for different ResNet models (predominantly ResNet-18) as well as the MobileNet-V2 model on multi-label classification for the Pascal VOC dataset
 * Perform quick analysis and construct a **Precision and Recall curve** from given .csv files for different degrees of Label Smoothing (see prcurve.py)
 
 ## Dataset
@@ -51,26 +51,22 @@ P(I) = 0
 One reason of using LS is to prevent the model from becoming too confident in its predictions and reduce overfitting
 
 ## Results
+The main results presented here will be a comparison between the ResNet-18 model as a lighweight model of the Residual Neural Network type alongside the MobileNet-V2 on the different Label Smoothing options (Without Label Smoothing, Scheme 1, and Scheme 2).
+
 ### Average Precision (Training Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
 | ResNet-18 | 0.997 | 0.916 | 0.979 |
-| ResNet-34 | 0.962 | 0.977 | 0.982 |
-| ResNet-50 | 0.996 | 0.992 | 0.970 |
 
 ### Average Precision (Validation Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
 | ResNet-18 | 0.872 | 0.853 | 0.865 |
-| ResNet-34 | 0.871 | 0.864 | 0.847 |
-| ResNet-50 | 0.873 | 0.871 | 0.863 |
 
 ### Average Precision (Test Set)
 | Model     | Baseline | LS Scheme 1 | LS Scheme 2 |
 | --------- | --------- | --------- | --------- |
 | ResNet-18 | 0.882 | 0.865 | 0.873 |
-| ResNet-34 | 0.882 | 0.873 | 0.859 |
-| ResNet-50 | 0.887 | 0.883 | 0.872 |
 
 ### Loss (ResNet-18)
 
@@ -82,7 +78,6 @@ One reason of using LS is to prevent the model from becoming too confident in it
 ## Potential Problems
 * The model is only trained on the Pascal VOC 2012 Dataset and while it is a vast dataset, there are object classes not included within the dataset which will affect the classification performance on these foreign object classes
 * A single degree of label smoothing chosen to be 0.1 is used on all of the experiments which do not truly shows the changes if this particular degree is modified
-* The changes in the average precision between ResNet-18, ResNet-34, and ResNet-50 is not that significant thus using a deeper model or architecture which has higher risk of overfitting may not always be ideal
 
 ## Steps to utilize the code
 1. Install dependencies via: pip install -r requirements.txt
