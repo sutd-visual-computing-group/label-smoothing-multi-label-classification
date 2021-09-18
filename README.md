@@ -20,7 +20,7 @@ The task is multi-label classification for 20 object classes, which is analogous
 **Average precision** is used as the metric to measure performance which is the average of the maximum precisions at different recall values. 
 
 ## Model
-The models used here are **Residual Neural Networks** with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 8, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers. The degree of label smoothing used here is 0.1 for all experiments. 
+The models used here are **Residual Neural Networks** with a main depth of 18 layers, trained and tested on a local machine. The models area trained with a batch size of 8, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers. The degree of label smoothing used here is 0.1 for all experiments. 
 
 Another model was also utilized here which is the **MobileNet-V2** model which is a convolutional neural network designed for compact mobile devices. The model consists of two different types of blocks: residual block with stride of 1 and a block with a stride of 2 for downsamlpling. The architecture starts off with a convolutional 2d layer followed by series of bottleneck layers, ending with convolutional 2d and an average pooling layer [3]. The model uses the same hyperparameters as the ResNet models with an identical degree of label smoothing as well.
 
