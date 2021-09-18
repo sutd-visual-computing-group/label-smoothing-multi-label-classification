@@ -72,6 +72,8 @@ One reason of using LS is to prevent the model from becoming too confident in it
 | ResNet-34 | 0.882 | 0.873 | 0.859 |
 | ResNet-50 | 0.887 | 0.883 | 0.872 |
 
+### Loss (ResNet-18)
+
 ## Insights
 * The degree of Label Smoothing chosen to be 0.1 since it is the most widely used degree which maintains a decently high confidence on the correct classes and adds a bit to the incorrect classes
 * The performance of the models after label smoothing is reliant on the training dataset which is Pascal VOC 2012 that is widely used in detection tasks
