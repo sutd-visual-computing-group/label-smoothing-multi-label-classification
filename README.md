@@ -75,7 +75,7 @@ From the Average Precisions recorded during the experiments, we can see that the
 
 ### Loss Curves (ResNet-18)
 ### Without Label Smoothing
-![alt text](https://github.com/JibrilTheUltimateFlugel/Label-Smoothing-Experiment-Internship-/blob/main/images/resnet18/labelsmooth0/AccWide.png?raw=true)
+![alt text](https://github.com/JibrilTheUltimateFlugel/Label-Smoothing-Experiment-Internship-/blob/main/images/resnet18/labelsmooth0/Acc.png?raw=true)
 ### Label Smoothing Scheme 1
 
 ### Label Smoothing Scheme 2
