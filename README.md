@@ -20,7 +20,9 @@ The task is multi-label classification for 20 object classes, which is analogous
 **Average precision** is used as the metric to measure performance which is the average of the maximum precisions at different recall values. 
 
 ## Model
-The models used here are **Residual Neural Networks** with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 16, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers. The degree of label smoothing used here is 0.1 for all experiments.
+The models used here are **Residual Neural Networks** with varying depths of 18, 34, and 50 layers, trained and tested on a local machine. The models area trained with a batch size of 8, learning rate of 1.5e-4 for the ResNet backbone and 5e-2 for ResNet Fully-Connected layers. The degree of label smoothing used here is 0.1 for all experiments. 
+
+Another model was also utilized here which is the **MobileNet-V2** model which is a convolutional neural network designed for compact mobile devices. The model consists of two different types of blocks: residual block with stride of 1 and a block with a stride of 2 for downsamlpling. The architecture starts off with a convolutional 2d layer followed by series of bottleneck layers, ending with convolutional 2d and an average pooling layer [3].
 
 ## Label Smoothing
 Label smoothing is a regularization technique which turns hard class labels assignments into soft label assignments, it operates directly on the label themselves and may lead to a better generalization [1]. Labels in the scope of LS are usually classified into two types:
@@ -96,3 +98,5 @@ This work was done by Leon Tjandra during an internship at Temasek Laboratories,
 [1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
 
 [2] Torch Contributors. (2017). "Torchvision.transforms". https://pytorch.org/vision/stable/transforms.html
+
+[3] Tsang, Sik-Ho. (2019). "Review: MobileNetV2 — Light Weight Model (Image Classification)". https://towardsdatascience.com/review-mobilenetv2-light-weight-model-image-classification-8febb490e61c
