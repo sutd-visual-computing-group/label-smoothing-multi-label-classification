@@ -74,6 +74,11 @@ The main results presented here will be a comparison between the ResNet-18 model
 From the Average Precisions recorded during the experiments, we can see that the MobileNetV2 generally performed better on the Validation and Test sets compared to the ResNet-18 model. As we apply the two different schemes of Label Smoothing it does not affect the ResNet-18 much as the APs for its Training, Validation, Test sets are almost identical for the different LS methods, however it affects the MobileNetV2 precisions as the model experienced a degradation in the Validation and Test set precisions after applying LS Scheme 1 and further after Scheme 2.
 
 ### Loss Curves (ResNet-18)
+### Without Label Smoothing
+![alt text](https://github.com/JibrilTheUltimateFlugel/Label-Smoothing-Experiment-Internship-/blob/main/images/resnet18/labelsmooth0/AccWide.png?raw=true)
+### Label Smoothing Scheme 1
+
+### Label Smoothing Scheme 2
 
 ### Loss Curves (MobileNetV2)
 
