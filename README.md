@@ -108,7 +108,7 @@ From the Average Precisions recorded during the experiments, we can see that the
     * Run the main function in main.py with required arguments. The codebase is clearly documented with clear details on how to execute the functions. You need to interface only with this function to reproduce the code.
 
 ## Acknowledgements
-This work was done by Leon Tjandra during an internship at Temasek Laboratories from 17 May to 3 September 2021, Singapore University of Technology and Design.
+This work was done by Leon Tjandra during an internship at Temasek Laboratories (May to September 2021), Singapore University of Technology and Design.
 
 ## References
 [1] Rosebrock, Adrian. (2019). "Label smoothing with Keras, TensorFlow, and Deep Learning". https://www.pyimagesearch.com/2019/12/30/label-smoothing-with-keras-tensorflow-and-deep-learning/
